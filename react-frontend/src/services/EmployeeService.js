@@ -1,8 +1,7 @@
 import axios from 'axios';
-//var backend_url=<@backend_url@>
-//const EMPLOYEE_API_BASE_URL = "http://3.234.141.206:8080/api/v1/employees";
+
 const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/v1/employees";
-//const EMPLOYEE_API_BASE_URL = ${backend_url:"http://localhost:8080/api/v1/employees"};
+
 
 class EmployeeService {
 
