@@ -2,6 +2,7 @@ FROM    node
 RUN     mkdir /app
 WORKDIR /app
 COPY    . .
-ENV     backend_url="springboot.gvdevops.online"
+ARG     var_name
+ENV     backend_url=$var_name
 RUN     npm install
 CMD     ["npm", "start"]
