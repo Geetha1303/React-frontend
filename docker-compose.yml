@@ -10,13 +10,12 @@ services:
       - springboot
 
   springboot:
-    image: geetha20/springboot
+    image: "geetha20/springboot:${MONGO_URL}"
     container_name: springboot
     ports:
       - "8080:8080"
     depends_on:
       - mongodb
-      - react
 
   mongodb:
     image: mongo

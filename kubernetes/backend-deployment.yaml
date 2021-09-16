@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot
+spec:
+  selector:
+    matchLabels:
+      app: springboot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: springboot
+    spec:
+      containers:
+        - name: springboot
+          image: geetha20/springboot
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_URL
+              value: mongodb://mongo:27017/EmployeeDB
