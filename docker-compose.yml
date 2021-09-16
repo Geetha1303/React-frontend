@@ -1,17 +1,22 @@
 version: "3.9"
 services:
-  frontend:
+  react:
     image: geetha20/react-frontend
     container_name: react
     stdin_open: true
     ports:
       - "3000:3000"
+    depends_on:
+      - springboot
 
   springboot:
     image: geetha20/springboot
     container_name: springboot
     ports:
       - "8080:8080"
+    depends_on:
+      - mongodb
+      - react
 
   mongodb:
     image: mongo
