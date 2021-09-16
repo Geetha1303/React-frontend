@@ -15,6 +15,7 @@ spec:
       containers:
         - name: react-frontend
           image: geetha20/react-frontend
+          stdin: true
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

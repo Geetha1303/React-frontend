@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const EMPLOYEE_API_BASE_URL = "http://18.213.245.199:8080/api/v1/employees";
+const EMPLOYEE_API_BASE_URL = "http://springboot-service:8080/api/v1/employees";
 
 
 class EmployeeService {
