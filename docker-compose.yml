@@ -10,10 +10,12 @@ services:
       - springboot
 
   springboot:
-    image: "geetha20/springboot:${MONGO_URL}"
+    image: geetha20/springboot
     container_name: springboot
     ports:
       - "8080:8080"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/EmployeeDB
     depends_on:
       - mongodb
 
