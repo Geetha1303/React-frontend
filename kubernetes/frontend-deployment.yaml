@@ -19,3 +19,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          env:
+            - name: REACT_APP_API_URL
+              value: http://34.236.48.33:8080/api/v1/employees
