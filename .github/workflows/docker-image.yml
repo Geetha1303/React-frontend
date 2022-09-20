@@ -26,6 +26,6 @@ jobs:
            docker build . --file Dockerfile --tag geetha20/reactapp:$(date +%s)
            
     - name: docker push
-      run: docker push ${{secrets.DOCKER_USER}}/reactapp:$(date +%s)
+      run: docker push ${{secrets.DOCKER_USER}}/reactapp
            
         
