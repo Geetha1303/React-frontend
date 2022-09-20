@@ -23,8 +23,8 @@ jobs:
     - name: Build the Docker image
       run: |
            cd react-frontend
-           docker build . --file Dockerfile --tag geetha20/react:$(date +%s)
+           docker build . --file Dockerfile --tag geetha20/react:latest
            
     - name: docker push
-      run: docker push ${{secrets.DOCKER_USER}}/reactapp
+      run: docker push ${{secrets.DOCKER_USER}}/reactapp:latest
         
