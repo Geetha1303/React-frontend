@@ -22,17 +22,15 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Dir
-      run: cd react-frontend
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      uses: docker/build-push-action@v2
-      with:
-        push: true
-        tags: ${{ steps.commit.outputs.short }}
-      #run: |
-      #     cd react-frontend
-      #     docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:latest
+      #uses: docker/build-push-action@v2
+      #with:
+      #  push: true
+       # tags: ${{ steps.commit.outputs.short }}
+      run: |
+           cd react-frontend
+           docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:latest
            
     - name: docker push
       run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
