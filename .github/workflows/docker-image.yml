@@ -41,6 +41,6 @@ jobs:
     #       docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
            
     - name: docker push
-      run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.ou${{secrets.DOCKER_USER}}/reactapp:tputs.short }}
+      run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
            
         
