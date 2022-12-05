@@ -35,7 +35,9 @@ jobs:
         tags: ${{ steps.commit.outputs.short }}
     -
       name: Build
-      run: docker build . --file ./React-frontend/react-frontend/Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
+      run: |
+           cd react-frontend
+           docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
            
     - name: docker push
       run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
