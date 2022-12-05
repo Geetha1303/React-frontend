@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    -
-        name: Checkout
-        uses: actions/checkout@v3
-        with:
-          path: action
-    #- id: commit
-    #  uses: pr-mpt/actions-commit-hash@v2
-    #- uses: docker/setup-buildx-action@v1
+    #-
+    #    name: Checkout
+    #    uses: actions/checkout@v3
+    #    with:
+    #      path: action
+    - id: commit
+      uses: pr-mpt/actions-commit-hash@v2
+    - uses: docker/setup-buildx-action@v1
     #- uses: actions/checkout@v3
     - name: docker login
       env:
