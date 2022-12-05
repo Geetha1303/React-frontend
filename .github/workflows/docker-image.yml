@@ -31,15 +31,16 @@ jobs:
     - name: Build the Docker image
       uses: docker/build-push-action@v2
       with:
+        context: "{{defaultContext}}:react-frontend"
         push: true
-        tags: ${{ steps.commit.outputs.short }}
-    -
-      name: Build
-      run: |
-           cd react-frontend
-           docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
+        tags: ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
+    #-
+    #  name: Build
+    #  run: |
+    #       cd react-frontend
+    #       docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
            
     - name: docker push
-      run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
+      run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.ou${{secrets.DOCKER_USER}}/reactapp:tputs.short }}
            
         
