@@ -40,7 +40,7 @@ jobs:
     #       cd react-frontend
     #       docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
            
-    - name: docker push
-      run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
+   # - name: docker push
+     # run: docker push ${{secrets.DOCKER_USER}}/reactapp:${{ steps.commit.outputs.short }}
            
         
